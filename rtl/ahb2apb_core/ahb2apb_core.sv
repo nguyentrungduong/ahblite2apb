@@ -242,7 +242,6 @@ assign sel_apb[7] = (cmd[13:11] == 3'b111);
 //PSEL0-7 control
 
 assign psel_o = sel_apb;
-//dffa_rstn  #(8)  dff_psel (apb_clk,rst_n,nxt_psel,psel_o);
 
 //------------------------------------------------------------------------------
 //PENABLE control
@@ -250,12 +249,10 @@ assign nxt_pen = st_access;
 dffa_rstn  #(1)  dff_pen (apb_clk,rst_n,nxt_pen,penable_o);
 //------------------------------------------------------------------------------
 //PADDR control
-//dffa_rstn  #(11)  dff_paddr (apb_clk,rst_n,cmd[10:0],paddr_o);
 assign paddr_o = cmd[10:0];
 
 //------------------------------------------------------------------------------
 //PWDATA control
-//dffa_rstn  #(32)  dff_pwdata (apb_clk,rst_n,cmd[45:14],pwdata_o);
 assign pwdata_o = cmd[45:14];
 
 //------------------------------------------------------------------------------
@@ -264,7 +261,6 @@ assign pstrb_o = 4'b1111;
 
 //------------------------------------------------------------------------------
 //PWRITE control
-//dffa_rstn  #(1)  dff_pwrite (apb_clk,rst_n,cmd[46],pwrite_o);
 assign pwrite_o = cmd[46];
 //------------------------------------------------------------------------------
 //Control writing to read data fifo

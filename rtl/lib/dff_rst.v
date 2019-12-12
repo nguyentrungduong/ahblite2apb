@@ -1,5 +1,4 @@
 ////////////////////////////////////////////////////////////////////////////////
-// Company     : SH Consulting
 //
 // Filename    : dff_rst.v
 // Description : D flip flop with synchronous reset signal (active high)
